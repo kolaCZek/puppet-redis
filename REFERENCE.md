@@ -110,6 +110,8 @@ The following parameters are available in the `redis` class:
 * [`ppa_repo`](#ppa_repo)
 * [`rdbcompression`](#rdbcompression)
 * [`rename_commands`](#rename_commands)
+* [`repl_announce_ip`](#repl_announce_ip)
+* [`repl_announce_port`](#repl_announce_port)
 * [`repl_backlog_size`](#repl_backlog_size)
 * [`repl_backlog_ttl`](#repl_backlog_ttl)
 * [`repl_disable_tcp_nodelay`](#repl_disable_tcp_nodelay)
@@ -653,6 +655,22 @@ Data type: `Hash[String,String]`
 
 
 Default value: `{}`
+
+##### <a name="repl_announce_ip"></a>`repl_announce_ip`
+
+Data type: `Stdlib::Host`
+
+
+
+Default value: ``undef``
+
+##### <a name="repl_announce_port"></a>`repl_announce_port`
+
+Data type: `Stdlib::Port`
+
+
+
+Default value: ``undef``
 
 ##### <a name="repl_backlog_size"></a>`repl_backlog_size`
 
@@ -1337,6 +1355,7 @@ The following parameters are available in the `redis::sentinel` class:
 * [`pid_file`](#pid_file)
 * [`quorum`](#quorum)
 * [`sentinel_announce_hostnames`](#sentinel_announce_hostnames)
+* [`sentinel_announce_ip`](#sentinel_announce_ip)
 * [`sentinel_bind`](#sentinel_bind)
 * [`sentinel_port`](#sentinel_port)
 * [`sentinel_resolve_hostnames`](#sentinel_resolve_hostnames)
@@ -1532,6 +1551,14 @@ Data type: `Optional[Enum['yes', 'no']]`
 
 Whether or not sentinels will announce hostnames instead of ip addresses
 to clients.  This can be required for TLS.
+
+Default value: ``undef``
+
+##### <a name="sentinel_announce_ip"></a>`sentinel_announce_ip`
+
+Data type: `Optional[Stdlib::Host]`
+
+The IP or hostname Sentinel will announce
 
 Default value: ``undef``
 
